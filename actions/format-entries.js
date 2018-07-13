@@ -10,8 +10,8 @@ function main(params) {
       name: row.doc.name,
 	    email: row.doc.email,
 	    comment: row.doc.comment,
-	    createdAt: row.doc.createdAt,
-	    icon: (row.doc.email ? `https://secure.gravatar.com/avatar/${md5.hash(row.doc.email.trim().toLowerCase())}?s=64` : null)
+	    createdAt: row.doc.createdAt//,
+	    //icon: (row.doc.email ? `https://secure.gravatar.com/avatar/${md5.hash(row.doc.email.trim().toLowerCase())}?s=64` : null)
     }})
 	};
 }
