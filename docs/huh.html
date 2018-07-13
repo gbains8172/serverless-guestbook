@@ -26,6 +26,34 @@
           </h3>
           <div id="entries"></div>
         </div>
+        <div class="column">
+          <h3 class="title is-3">
+            Add your message
+          </h3>
+          <form id="addEntry">
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="your name" id="name">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="your email" id="email">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Comment</label>
+              <div class="control">
+                <textarea class="textarea" placeholder="your comment" id="comment"></textarea>
+              </div>
+            </div>
+            <div class="control">
+              <button class="button is-primary">Send your message</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -34,11 +62,16 @@
     {{#each entries}}
     <div class="box">
       <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="{{icon}}" alt="No Image">
+          </figure>
+        </div>
         <div class="media-content">
           <div class="content">
             <p>
-              <strong>{{title}}</strong> <small>{{joy}}</small>
-              <br> {{sadness}} <br> {{disgust}} <br> {{fear}} <br> {{anger}}
+              <strong>{{name}}</strong> <small>{{email}}</small>
+              <br> {{comment}}
             </p>
           </div>
         </div>

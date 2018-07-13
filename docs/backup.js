@@ -58,8 +58,24 @@ const guestbook = {
       console.log(error);
     });
   }
-  
-  // on document load prep and load
+
+  // intercept the click on the submit button, add the guestbook entry and
+  // reload entries on success
+  $(document).on('submit', '#addEntry', function(e) {
+    e.preventDefault();
+
+    guestbook.add(
+      $('#name').val().trim(),
+      $('#email').val().trim(),
+      $('#comment').val().trim()
+    ).done(function(result) {
+      // reload entries
+      loadEntries();
+    }).error(function(error) {
+      console.log(error);
+    });
+  });
+
   $(document).ready(function() {
     prepareTemplates();
     loadEntries();

@@ -6,12 +6,14 @@ const md5 = require('spark-md5');
 function main(params) {
   // params contain the "rows" coming from Cloudant including the full documents
   return {
-    entries: params.rows.map((row) => { return {
-      name: row.doc.name,
-	    email: row.doc.email,
-	    comment: row.doc.comment,
-	    createdAt: row.doc.createdAt//,
-	    //icon: (row.doc.email ? `https://secure.gravatar.com/avatar/${md5.hash(row.doc.email.trim().toLowerCase())}?s=64` : null)
-    }})
+	  entries: params.rows.map((row) => { return {
+	    title: row.doc.title,
+	    anger: row.doc.anger,
+	    fear: row.doc.fear,
+	    sadness: row.doc.sadness,
+	    joy: row.doc.joy,
+	    disgust: row.doc.disgust,
+	    createdAt: row.doc.createdAt,
+	  }})
 	};
 }
