@@ -8,7 +8,7 @@ const guestbook = {
     return $.ajax({
       type: 'GET',
       url: `${apiUrl}/entries`,
-      dataType: 'json'
+      dataType: 'json',
       success: function(result){
         console.log(result);
       }
