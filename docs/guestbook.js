@@ -9,6 +9,9 @@ const guestbook = {
       type: 'GET',
       url: `${apiUrl}/entries`,
       dataType: 'json'
+      success: function(result){
+        console.log(result);
+      }
     });
   },
   // add a single guestbood entry
